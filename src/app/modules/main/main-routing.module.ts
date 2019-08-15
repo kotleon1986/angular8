@@ -16,19 +16,23 @@ const routes: Routes = [
     component: PageNotFoundComponent
   },
   {
-    path: "",
-    canLoad: [AuthGuard],
-    data: { roles: [Roles.USER] },
-    loadChildren: "./../user/user.module#UserModule"
-  },
-  {
     path: "categories",
     loadChildren: "./categories/categories.module#CategoriesModule"
   },
   {
     path: ":slug",
     loadChildren: "./products/products.module#ProductsModule"
-  }
+  },
+  {
+    path: "",
+    canLoad: [AuthGuard],
+    data: { roles: [Roles.USER] },
+    loadChildren: "./../user/user.module#UserModule"
+  },
+  // {
+  //   path: ":slug",
+  //   loadChildren: "./products/products.module#ProductsModule"
+  // }
 ];
 
 @NgModule({
