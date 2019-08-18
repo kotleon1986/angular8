@@ -1,8 +1,8 @@
 export interface ApiResponse {
   success: boolean;
-  message?: string | object;
+  message?: string;
   errors?: object;
-  data?: object;
+  data?: any;
   token?: string;
 }
 
