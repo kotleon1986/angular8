@@ -19,6 +19,7 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 
 import { SpinnerComponent } from "./spinner.component";
 import { GenericComponent } from './components/generic/generic.component';
+import {MatSnackBarModule} from '@angular/material';
 
 const Modules = [
   CommonModule,
@@ -32,7 +33,8 @@ const Modules = [
   MatCardModule,
   MatButtonModule,
   MatIconModule,
-  MatListModule
+  MatListModule,
+  MatSnackBarModule
 ];
 
 const Directives = [

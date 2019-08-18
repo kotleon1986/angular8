@@ -1,0 +1,28 @@
+@import "variable";
+
+@mixin snackbar($type) {
+  background: $type;
+  @if $type == $warning-dark {
+    color: $white;
+  } @else {
+    color: $dark-text;
+  }
+}
+
+.success-snackbar {
+  @include snackbar($success-dark);
+}
+
+.info-snackbar {
+  @include snackbar($info);
+}
+
+.warning-snackbar {
+  @include snackbar($warning-dark);
+}
+
+.error-snackbar {
+  @include snackbar($danger-dark);
+}
+
+
