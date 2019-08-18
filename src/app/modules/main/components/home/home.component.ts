@@ -1,11 +1,16 @@
-import { Component, OnInit } from "@angular/core";
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {GenericComponent} from '../../../shared/components/generic/generic.component';
+import {ApiService} from '../../../../services/common/api/api.service';
+import Endpoints from '../../../../services/common/api/api.config';
+import {takeUntil} from 'rxjs/operators';
+import {Subject} from 'rxjs';
 
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
   styleUrls: ["./home.component.scss"]
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent extends GenericComponent implements OnInit {
   tiles: any[] = [
     {
       text: "One"
@@ -39,7 +44,10 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  constructor() {}
+  constructor() {
+    super();
+  }
 
   ngOnInit() {}
+
 }

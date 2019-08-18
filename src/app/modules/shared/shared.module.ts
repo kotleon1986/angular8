@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import {
   AccordionAnchorDirective,
@@ -17,10 +18,13 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSidenavModule } from "@angular/material/sidenav";
 
 import { SpinnerComponent } from "./spinner.component";
+import { GenericComponent } from './components/generic/generic.component';
 
 const Modules = [
   CommonModule,
+  HttpClientModule,
   FlexLayoutModule,
+  ReactiveFormsModule,
   FormsModule,
   MatToolbarModule,
   MatSidenavModule,
@@ -40,7 +44,10 @@ const Directives = [
 
 const Pipes = [];
 
-const Components = [SpinnerComponent];
+const Components = [
+  GenericComponent,
+  SpinnerComponent
+];
 
 @NgModule({
   imports: Modules,
