@@ -1,19 +1,22 @@
-<div *ngIf="!isAdminLayout; else adminLayout">
-  <button [matMenuTriggerFor]="profile" mat-icon-button class="m-r-5">
-    <img src="assets/images/users/1.jpg" alt="user" class="profile-pic" />
-  </button>
-  <mat-menu #profile="matMenu" class="mymegamenu">
-    <button mat-menu-item><mat-icon>settings</mat-icon> Settings</button>
-    <button mat-menu-item><mat-icon>account_box</mat-icon> Profile</button>
-    <button mat-menu-item>
-      <mat-icon>notifications_off</mat-icon> Disable notifications
+<ng-container *ngIf="user">
+  <div *ngIf="!isAdminLayout; else adminLayout">
+    <button [matMenuTriggerFor]="profile" mat-icon-button class="m-r-5">
+      <img src="assets/images/users/1.jpg" alt="user" class="profile-pic" />
     </button>
-    <button mat-menu-item><mat-icon>exit_to_app</mat-icon> Sign Out</button>
-  </mat-menu>
-</div>
+    <mat-menu #profile="matMenu" class="mymegamenu">
+      <button mat-menu-item><mat-icon>account_box</mat-icon> Profile</button>
+      <button mat-menu-item (click)="logout()"><mat-icon>exit_to_app</mat-icon> Sign Out</button>
+    </mat-menu>
+  </div>
 
-<ng-template #adminLayout>
-  <button mat-icon-button>
-    <mat-icon> eject </mat-icon>
-  </button>
-</ng-template>
+  <ng-template #adminLayout>
+    <button mat-icon-button>
+      <mat-icon> eject </mat-icon>
+    </button>
+  </ng-template>
+</ng-container>
+<div *ngIf="!user">
+  <a routerLink="/auth/login" class="text-white" matTooltip="Sign In">
+    <mat-icon>person</mat-icon>
+  </a>
+</div>

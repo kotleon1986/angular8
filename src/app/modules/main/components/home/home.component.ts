@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {GenericComponent} from '../../../shared/components/generic/generic.component';
+import {ApiService} from '../../../../services/common/api/api.service';
 
 @Component({
   selector: "app-home",
