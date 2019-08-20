@@ -1,1 +1,28 @@
-<p>login works!</p>
+<mat-card>
+  <mat-card-content>
+    <div class="text-center">
+      <mat-icon class="display-6">perm_identity</mat-icon>
+      <h2 class="mat-h2">Login Page</h2>
+    </div>
+    <div class="login-form-container">
+      <form [formGroup]="form" (ngSubmit)="handleSubmit()" id="login_form">
+        <mat-form-field class="example-full-width">
+          <input matInput name="email" id="email" placeholder="Email *" formControlName="email">
+          <mat-error *ngIf="errors.email">{{ errors.email }}</mat-error>
+          <mat-error *ngIf="hasError('email', 'required')">Email is required</mat-error>
+          <mat-error *ngIf="hasError('email', 'email')">Invalid email</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input type="password" matInput name="password" id="password" placeholder="Password *" formControlName="password">
+          <mat-error *ngIf="errors.password">{{ errors.password }}</mat-error>
+          <mat-error *ngIf="hasError('password', 'required')">Password is required</mat-error>
+          <mat-error *ngIf="hasError('password', 'minLength')">Password must be minimum 8 characters long</mat-error>
+        </mat-form-field>
+        <div class="example-full-width">
+          <app-submit-button text="SIGN IN" [disabled]="!form.valid" [loading]="loading"></app-submit-button>
+        </div>
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>
+

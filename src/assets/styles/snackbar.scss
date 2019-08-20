@@ -3,9 +3,9 @@
 @mixin snackbar($type) {
   background: $type;
   @if $type == $warning-dark {
-    color: $white;
-  } @else {
     color: $dark-text;
+  } @else {
+    color: $white;
   }
 }
 

@@ -1,25 +1,27 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { FlexLayoutModule } from "@angular/flex-layout";
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {
   AccordionAnchorDirective,
   AccordionLinkDirective,
   AccordionDirective
-} from "./accordion";
+} from './accordion';
 
-import { MatMenuModule } from "@angular/material/menu";
-import { MatIconModule } from "@angular/material/icon";
-import { MatListModule } from "@angular/material/list";
-import { MatCardModule } from "@angular/material/card";
-import { MatButtonModule } from "@angular/material/button";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatFormFieldModule, MatInputModule, MatProgressSpinnerModule, MatSnackBarModule} from '@angular/material';
 
-import { SpinnerComponent } from "./spinner.component";
+import { SpinnerComponent } from './spinner.component';
 import { GenericComponent } from './components/generic/generic.component';
-import {MatSnackBarModule} from '@angular/material';
+import { FormComponent } from './components/form/form.component';
+import { SubmitButtonComponent } from './components/elements/submit-button/submit-button.component';
 
 const Modules = [
   CommonModule,
@@ -34,7 +36,10 @@ const Modules = [
   MatButtonModule,
   MatIconModule,
   MatListModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatProgressSpinnerModule,
+  MatFormFieldModule,
+  MatInputModule
 ];
 
 const Directives = [
@@ -48,12 +53,14 @@ const Pipes = [];
 
 const Components = [
   GenericComponent,
-  SpinnerComponent
+  SpinnerComponent,
+  SubmitButtonComponent,
+  FormComponent
 ];
 
 @NgModule({
   imports: Modules,
-  declarations: [...Components, ...Directives, ...Pipes],
+  declarations: [...Components, ...Directives, ...Pipes ],
   exports: [...Modules, ...Components, ...Directives, ...Pipes],
   entryComponents: Components
 })

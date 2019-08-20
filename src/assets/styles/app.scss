@@ -16,8 +16,8 @@ File: scss
  *	7. Widgets
  *	8. Custom Templates
  */
-/******************* 
-Global Styles 
+/*******************
+Global Styles
 *******************/
 
 * {
@@ -1009,6 +1009,36 @@ list inline
     margin-right: 10px;
     &:last-child {
       margin-right: 0px;
+    }
+  }
+}
+
+/*******************
+Submit button
+*******************/
+button.submit-button {
+  min-height: 38px;
+
+  .mat-progress-spinner {
+    margin: auto;
+    circle {
+      stroke: $white !important;
+    }
+  }
+}
+
+/*****************
+Validation Errors
+******************/
+mat-form-field {
+  div.mat-form-field-wrapper {
+    padding-bottom: 0.25em;
+    div.mat-form-field-underline {
+      position: relative;
+      bottom: auto;
+    }
+    div.mat-form-field-subscript-wrapper {
+      position: static;
     }
   }
 }

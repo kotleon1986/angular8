@@ -4,7 +4,7 @@ const Endpoints = {
   auth: {
     login: {
       method: Methods.POST,
-      url: '/login'
+      url: '/auth/login'
     }
   }
 };
